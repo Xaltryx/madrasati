@@ -1,0 +1,67 @@
+school-main/
+├── app/
+│   ├── admin/
+│   │   └── page.tsx
+│   ├── analytics/
+│   │   └── page.tsx
+│   ├── api/
+│   │   ├── admin/
+│   │   │   └── stats/
+│   │   │       └── route.ts
+│   │   ├── analytics/
+│   │   │   └── route.ts
+│   │   ├── leaderboard/
+│   │   │   └── route.ts
+│   │   ├── lessons/
+│   │   │   └── route.ts
+│   │   ├── notify/
+│   │   │   └── route.ts
+│   │   ├── quiz/
+│   │   │   └── route.ts
+│   │   ├── sm2/
+│   │   │   └── due/
+│   │   │       └── route.ts
+│   │   ├── subjects/
+│   │   │   └── route.ts
+│   │   └── vocabulary/
+│   │       ├── random/
+│   │       │   └── route.ts
+│   │       └── route.ts
+│   ├── auth/
+│   │   └── page.tsx
+│   ├── components/
+│   │   └── NavAuth.tsx
+│   ├── leaderboard/
+│   │   └── page.tsx
+│   ├── manage/
+│   │   └── page.tsx
+│   ├── quiz/
+│   │   └── page.tsx
+│   ├── sm2/
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── lib/
+│   ├── answer_matcher.ts
+│   ├── db.ts
+│   ├── sm2.ts
+│   └── types.ts
+├── tests/
+│   ├── auth.test.ts
+│   └── ui.test.ts
+├── .env.example
+├── .env.local
+├── .gitignore
+├── DEPLOY.md
+├── directory_tree.txt
+├── middleware.ts
+├── next-env.d.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── supabase_schema.sql
+├── tailwind.config.js
+├── tsconfig.json
+└── vitest.config.ts
