@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav style={{
           background: '#fffef7', borderBottom: '3px solid #000',
           padding: '10px 20px', display: 'flex', justifyContent: 'space-between',
-          alignItems: 'center', sticky: 'top', zIndex: 100
+          alignItems: 'center', position: 'sticky', top: 0, zIndex: 100
         }}>
           <Link href="/" style={{ fontWeight: 900, textDecoration: 'none', color: '#000', fontSize: '1.2rem' }}>
             📖 مدرستي
