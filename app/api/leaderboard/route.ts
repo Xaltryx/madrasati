@@ -24,17 +24,19 @@ export async function GET(req: NextRequest) {
       streakMap[row.user_id] = (streakMap[row.user_id] ?? 0) + 1
     }
 
-    const { data: profiles } = await supabase
-      .from('user_profiles')
-      .select('user_id, username, avatar_color')
-      .catch(() => ({ data: null })) as any
+    let profiles: any[] = []
+    try {
+      const { data } = await supabase
+        .from('user_profiles')
+        .select('user_id, username, avatar_color')
+      profiles = data ?? []
+    } catch (_) {}
 
     const profileMap: Record<number, { username: string; avatar_color: string }> = {}
-    for (const p of profiles ?? []) {
+    for (const p of profiles) {
       profileMap[p.user_id] = { username: p.username, avatar_color: p.avatar_color }
     }
 
-    // Get the current logged-in user to determine their rank
     const { data: { user } } = await supabase.auth.getUser()
 
     const leaders = Object.entries(userMap)
@@ -54,7 +56,6 @@ export async function GET(req: NextRequest) {
       .sort((a, b) => b.xp - a.xp)
       .slice(0, 20)
 
-    // Determine current user's rank from their profile username
     let myRank: number | null = null
     if (user) {
       const { data: myProfile } = await supabase
